@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-bg: #0a0b0d;
+  --color-brand-surface: #111317;
+  --color-brand-card: #16181e;
+  --color-brand-card-hover: #1d2129;
+  --color-brand-border: #252a34;
+  --color-brand-border-light: #343a47;
+  --color-brand-ivory: #f5f3ef;
+  --color-brand-beige: #d6ccbe;
+  --color-brand-champagne: #c9a96e;
+  --color-brand-gold: #dfbe7d;
+  --color-brand-muted: #88909e;
+}
+
+@layer base {
+  * {
+    border-color: #252a34;
+  }
+  
+  html {
+    font-family: var(--font-sans);
+    background-color: #0a0b0d;
+    color: #f5f3ef;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar for luxury feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0b0d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252a34;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3e4554;
+  }
+}
+
+/* Glassmorphism and editorial utilities */
+.glass-panel {
+  background: rgba(18, 20, 25, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(10, 11, 13, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.editorial-glow {
+  box-shadow: 0 0 50px -15px rgba(201, 169, 110, 0.15);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f5f3ef 0%, #d6ccbe 50%, #c9a96e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #dcdcdc 50%, #9aa0a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #printable-order-invoice,
+  #printable-order-invoice * {
+    visibility: visible;
+  }
+  #printable-order-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SAKSOX — Premium Winter Fashion & Fragrances",
+  "description": "SAKSOX is a modern Gen Z luxury winter fashion, signature perfumes, and lifestyle brand in India. Wear your mood, find your signature.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
